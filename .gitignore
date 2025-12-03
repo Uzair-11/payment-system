@@ -1,0 +1,25 @@
+# XAMPP / local environment
+vendor/
+node_modules/
+.env
+*.log
+*.sql
+uploads/
+
+# IDE files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Cache
+cache/
+tmp/
+
+# Sensitive action handlers (optional – remove if you want them uploaded)
+admin-actions.php
+bank-actions.php
+merchant-actions.php
+user-actions.php

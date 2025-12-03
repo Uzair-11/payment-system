@@ -1,0 +1,56 @@
+body {
+    background: #eceff4;
+    font-family: Arial;
+}
+
+.container {
+    width: 400px;
+    background: white;
+    padding: 25px;
+    margin: 80px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #bbc3d0;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #111;
+}
+
+.logout {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 12px;
+    background: red;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+ul {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+ul li a {
+    color: #0466c8;
+    text-decoration: none;
+    font-size: 16px;
+}

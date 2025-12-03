@@ -1,0 +1,110 @@
+/* Dark Gradient Background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0f1f, #151a2e, #0b1225);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: #e4e8f0;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Layout */
+.dashboard {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: #7c5cff;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 10px;
+    text-decoration: none;
+    color: #cdd3e0;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background: rgba(124,92,255,0.1);
+}
+
+/* Topbar */
+.topbar {
+    width: 100%;
+    padding: 15px 25px;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 20px;
+}
+
+.card {
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+.card h3 {
+    margin: 0;
+    color: #a98dff;
+}
+
+.table-container {
+    padding: 20px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    color: #cdd3e0;
+}
+
+.table-container th, td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logout-btn {
+    padding: 8px 14px;
+    background: #ff4d6d;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.logout-btn:hover {
+    background: #d93452;
+}
