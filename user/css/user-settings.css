@@ -1,0 +1,58 @@
+.settings-card {
+    max-width: 480px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 14px;
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+.settings-card h3 {
+    margin-top: 20px;
+    color: #a98dff;
+}
+
+.switch-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.switch-row span {
+    color: #cdd3e0;
+    font-size: 15px;
+}
+
+.switch-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.switch-row select {
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.save-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    background: #7c5cff;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.save-btn:hover {
+    background: #6a4be8;
+}

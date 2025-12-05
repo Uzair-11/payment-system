@@ -1,0 +1,83 @@
+.back-btn {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #d9ccff;
+    text-decoration: none;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    transition: .25s;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.payout-card {
+    max-width: 550px;
+    margin: auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+}
+
+.payout-card h2 {
+    color: #a98dff;
+    margin-bottom: 18px;
+}
+
+.balance-box {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+}
+
+.balance-box span {
+    color: #73fa79;
+    font-weight: 700;
+}
+
+.payout-card label {
+    margin-top: 12px;
+    color: #cdd3e0;
+    font-weight: 600;
+}
+
+.payout-card input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    margin-top: 6px;
+}
+
+.request-btn {
+    margin-top: 16px;
+    width: 100%;
+    padding: 12px;
+    background: rgba(124,92,255,0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(124,92,255,0.3);
+    color: #d9ccff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.request-btn:hover {
+    background: rgba(124,92,255,0.35);
+}
+.success-message {
+    margin-top: 15px;
+    color: #73fa79;
+    font-weight: 600;
+    text-align: center;
+}

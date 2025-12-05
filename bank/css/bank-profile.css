@@ -1,0 +1,46 @@
+/* Profile Page Form Styling (Glassmorphism) */
+
+.form-card {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 14px;
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+.form-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-card label {
+    margin-top: 14px;
+    margin-bottom: 6px;
+    color: #a98dff;
+    font-weight: 600;
+}
+
+.form-card input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.06);
+    color: white;
+    font-size: 15px;
+    transition: 0.25s;
+}
+
+.form-card input:focus {
+    outline: none;
+    border-color: #7c5cff;
+    background: rgba(255,255,255,0.12);
+}
+
+.submit-btn {
+    margin-top: 18px;
+    padding: 12px 0;
+    font-size: 16px;
+}

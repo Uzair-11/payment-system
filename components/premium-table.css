@@ -1,0 +1,85 @@
+/* TABLE WRAPPER */
+.table-wrapper {
+    padding: 20px;
+}
+
+/* Unified table look (glassmorphism like dashboard) */
+.premium-table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #e4e8f0;
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+/* Header */
+.premium-table thead {
+    background: rgba(255,255,255,0.08);
+}
+
+.premium-table th {
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+    color: #a98dff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Table rows */
+.premium-table td {
+    padding: 14px;
+    color: #d5d9e4;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Row hover */
+.premium-table tbody tr:hover {
+    background: rgba(124,92,255,0.08);
+}
+
+/* Actions column */
+.actions a {
+    text-decoration: none;
+    margin-right: 12px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: 0.25s;
+}
+
+/* Edit button */
+.action-edit {
+    color: #7c5cff;
+}
+.action-edit:hover {
+    background: rgba(124,92,255,0.15);
+}
+
+/* Delete button */
+.action-delete {
+    color: #ff4d6d;
+}
+.action-delete:hover {
+    background: rgba(255,77,109,0.15);
+}
+
+/* Page header matching dashboard */
+.page-header h2 {
+    color: #a98dff;
+}
+
+.page-header .btn-primary {
+    background: #7c5cff;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.page-header .btn-primary:hover {
+    background: #6b4de8;
+}

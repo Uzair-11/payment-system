@@ -9,7 +9,8 @@ $bank = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM banks WHERE id=$id
 if (!$bank) die("Bank not found");
 ?>
 
-<link rel="stylesheet" href="../components/dashboard-styles.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/edit-bank.css">
 
 <div class="dashboard">
 
@@ -18,34 +19,48 @@ $title = "Edit Bank";
 $username = $_SESSION['admin_username'];
 $role = "Admin";
 $logout = "admin-actions.php?action=logout";
+
 $menu = [
     ["label" => "Dashboard", "link" => "admin-dashboard.php"],
-    ["label" => "Banks", "link" => "manage-banks.php"]
+    ["label" => "Users", "link" => "manage-users.php"],
+    ["label" => "Merchants", "link" => "manage-merchants.php"],
+    ["label" => "Banks", "link" => "manage-banks.php"],
+    ["label" => "Transactions", "link" => "manage-transactions.php"]
 ];
+
 include "../components/sidebar.php";
 ?>
 
-<div style="width:100%">
+<div class="page-main">
+
 <?php include "../components/topbar.php"; ?>
 
-<div class="table-container" style="max-width:500px;margin:auto;">
-    <h2>Edit Bank</h2>
+<div class="page-content">
 
-    <form method="POST" action="update-bank.php">
-        <input type="hidden" name="type" value="edit">
-        <input type="hidden" name="id" value="<?php echo $bank['id']; ?>">
+    <div class="page-header">
+        <h2>Edit Bank</h2>
+    </div>
 
-        <label class="muted">Bank ID</label>
-        <input name="bank_id" value="<?php echo $bank['bank_id']; ?>" required>
+    <div class="form-card">
+        <form method="POST" action="update-bank.php">
+            
+            <input type="hidden" name="type" value="edit">
+            <input type="hidden" name="id" value="<?php echo $bank['id']; ?>">
 
-        <label class="muted">Bank Name</label>
-        <input name="bank_name" value="<?php echo $bank['bank_name']; ?>" required>
+            <label>Bank ID</label>
+            <input type="text" name="bank_id" value="<?php echo $bank['bank_id']; ?>" required>
 
-        <label class="muted">New PIN (optional)</label>
-        <input name="pin" type="password" maxlength="6" placeholder="Leave blank to keep same PIN">
+            <label>Bank Name</label>
+            <input type="text" name="bank_name" value="<?php echo $bank['bank_name']; ?>" required>
 
-        <button class="btn" style="margin-top:12px;">Update Bank</button>
-    </form>
+            <label>New PIN (optional)</label>
+            <input type="password" name="pin" maxlength="6" placeholder="Leave blank to keep existing PIN">
+
+            <button type="submit" class="btn-primary submit-btn">Update Bank</button>
+
+        </form>
+    </div>
+
 </div>
 
 </div>

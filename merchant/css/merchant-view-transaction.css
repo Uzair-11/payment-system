@@ -1,0 +1,57 @@
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #d9ccff;
+    text-decoration: none;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    transition: 0.25s;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.tx-card {
+    max-width: 600px;
+    margin: auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+}
+
+.tx-card h2 {
+    color: #a98dff;
+    margin-bottom: 20px;
+}
+
+.tx-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.tx-row:last-child {
+    border-bottom: none;
+}
+
+.tx-row .label {
+    color: #cdd3e0;
+    font-weight: 600;
+}
+
+.tx-row .value {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Status Colors */
+.status-pending { color: #f6c14b; }
+.status-succeeded { color: #73fa79; }
+.status-declined { color: #ff6b6b; }
+.status-settled { color: #7c5cff; }

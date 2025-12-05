@@ -9,67 +9,78 @@ $conn = mysqli_connect("localhost","root","","payment_system");
 
 // Fetch all users
 $users = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC");
-?>
 
-<link rel="stylesheet" href="../components/dashboard-styles.css">
-
-<div class="dashboard">
-
-<?php
+// Page variables
 $title = "Manage Users";
 $username = $_SESSION['admin_username'];
-$role = "Admin";
+$role = $_SESSION['admin_role'] ?? "Admin";
 $logout = "admin-actions.php?action=logout";
 
 $menu = [
     ["label" => "Dashboard", "link" => "admin-dashboard.php"],
     ["label" => "Users", "link" => "manage-users.php"],
-    ["label" => "Merchants", "link" => "#"],
-    ["label" => "Banks", "link" => "#"],
-    ["label" => "Transactions", "link" => "#"],
+    ["label" => "Merchants", "link" => "manage-merchants.php"],
+    ["label" => "Banks", "link" => "manage-banks.php"],
+    ["label" => "Transactions", "link" => "manage-transactions.php"],
 ];
-
-include "../components/sidebar.php";
 ?>
 
-<div style="width:100%">
-    <?php include "../components/topbar.php"; ?>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/users.css">
 
-    <div class="table-container">
-        <h2>All Users</h2>
+<div class="dashboard">
 
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Registered</th>
-                <th>Actions</th>
-            </tr>
+    <?php include "../components/sidebar.php"; ?>
 
-            <?php while($u = mysqli_fetch_assoc($users)): ?>
-            <tr>
-                <td><?php echo $u['id']; ?></td>
-                <td><?php echo $u['name']; ?></td>
-                <td><?php echo $u['email']; ?></td>
-                <td><?php echo $u['phone']; ?></td>
-                <td><?php echo $u['created_at']; ?></td>
+    <div class="page-main">
 
-                <td>
-                    <a href="edit-user.php?id=<?php echo $u['id']; ?>" 
-                       style="color:#7c5cff;font-weight:600;">Edit</a> | 
-                    <a href="delete-user.php?id=<?php echo $u['id']; ?>" 
-                       style="color:#ff5b5b;font-weight:600;"
-                       onclick="return confirm('Delete this user?');">Delete</a>
-                </td>
+        <?php include "../components/topbar.php"; ?>
 
-            </tr>
-            <?php endwhile; ?>
+        <div class="page-content">
 
-        </table>
+            <div class="page-header">
+                <h2>All Users</h2>
+                <a href="add-user.php" class="btn-primary">+ Add User</a>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="premium-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Registered</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    <?php while($u = mysqli_fetch_assoc($users)): ?>
+                        <tr>
+                            <td><?php echo $u['id']; ?></td>
+                            <td><?php echo $u['name']; ?></td>
+                            <td><?php echo $u['email']; ?></td>
+                            <td><?php echo $u['phone']; ?></td>
+                            <td><?php echo $u['created_at']; ?></td>
+
+                            <td class="actions">
+                                <a href="edit-user.php?id=<?php echo $u['id']; ?>" class="action-edit">Edit</a>
+                                <a href="delete-user.php?id=<?php echo $u['id']; ?>" 
+                                   class="action-delete"
+                                   onclick="return confirm('Delete this user?');">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
     </div>
-
-</div>
 
 </div>

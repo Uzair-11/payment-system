@@ -1,0 +1,66 @@
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #d9ccff;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.payout-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+}
+
+.payout-card h2 {
+    color: #a98dff;
+    margin-bottom: 18px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 600;
+    color: #cdd3e0;
+}
+
+.value {
+    color: white;
+    font-weight: 600;
+}
+
+/* STATUS COLORS */
+.status-pending { color: #f6c14b; }
+.status-processing { color: #a98dff; }
+.status-paid { color: #73fa79; }
+.status-failed { color: #ff6b6b; }
+
+/* Sub section */
+.section-title {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    color: #a98dff;
+    font-size: 18px;
+    font-weight: 600;
+}

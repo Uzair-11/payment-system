@@ -13,7 +13,8 @@ $merchant = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM merchants WHER
 if (!$merchant) { die("Merchant not found"); }
 ?>
 
-<link rel="stylesheet" href="../components/dashboard-styles.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/edit-merchant.css">
 
 <div class="dashboard">
 
@@ -27,32 +28,38 @@ $menu = [
     ["label" => "Dashboard", "link" => "admin-dashboard.php"],
     ["label" => "Users", "link" => "manage-users.php"],
     ["label" => "Merchants", "link" => "manage-merchants.php"],
-    ["label" => "Banks", "link" => "#"],
-    ["label" => "Transactions", "link" => "#"],
+    ["label" => "Banks", "link" => "manage-banks.php"],
+    ["label" => "Transactions", "link" => "manage-transactions.php"],
 ];
 
 include "../components/sidebar.php";
 ?>
 
-<div style="width:100%">
+<div class="page-main">
     <?php include "../components/topbar.php"; ?>
 
-    <div class="table-container" style="max-width:500px;margin:auto;">
-        <h2>Edit Merchant</h2>
+    <div class="page-content">
 
-        <form method="POST" action="update-merchant.php">
+        <div class="page-header">
+            <h2>Edit Merchant</h2>
+        </div>
 
-            <input type="hidden" name="id" value="<?php echo $merchant['id']; ?>">
+        <div class="form-card">
+            <form method="POST" action="update-merchant.php">
 
-            <label class="muted">Business Name</label>
-            <input name="business_name" value="<?php echo $merchant['business_name']; ?>" required>
+                <input type="hidden" name="id" value="<?php echo $merchant['id']; ?>">
 
-            <label class="muted">Email</label>
-            <input name="email" value="<?php echo $merchant['email']; ?>" required>
+                <label>Business Name</label>
+                <input type="text" name="business_name" value="<?php echo $merchant['business_name']; ?>" required>
 
-            <button class="btn" style="margin-top:12px;">Update Merchant</button>
-        </form>
+                <label>Email</label>
+                <input type="email" name="email" value="<?php echo $merchant['email']; ?>" required>
+
+                <button class="btn-primary submit-btn" type="submit">Update Merchant</button>
+            </form>
+        </div>
+
     </div>
-
 </div>
+
 </div>

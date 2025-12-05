@@ -5,36 +5,38 @@ if (!isset($_SESSION['admin_logged_in'])) {
     exit;
 }
 
-$conn = mysqli_connect("localhost","root","","payment_system");
+$conn = mysqli_connect("localhost", "root", "", "payment_system");
 
 $success = $error = "";
 
+// Handle merchant creation
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-    $bank_id   = mysqli_real_escape_string($conn, $_POST['bank_id']);
-    $bank_name = mysqli_real_escape_string($conn, $_POST['bank_name']);
-    $pin       = mysqli_real_escape_string($conn, $_POST['pin']);
+
+    $business_name = mysqli_real_escape_string($conn, $_POST['business_name']);
+    $email         = mysqli_real_escape_string($conn, $_POST['email']);
+    $api_key       = bin2hex(random_bytes(16)); // Auto-generate API key
 
     $insert = mysqli_query($conn, "
-        INSERT INTO banks (bank_id, bank_name, pin, active)
-        VALUES ('$bank_id', '$bank_name', '$pin', 1)
+        INSERT INTO merchants (business_name, email, api_key, verified)
+        VALUES ('$business_name', '$email', '$api_key', 0)
     ");
 
     if ($insert) {
-        $success = "Bank added successfully!";
+        $success = "Merchant created successfully! API Key: $api_key";
     } else {
         $error = "Error: " . mysqli_error($conn);
     }
 }
+
 ?>
 
 <link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/add-bank.css">
+<link rel="stylesheet" href="css/add-merchant.css">
 
 <div class="dashboard">
 
 <?php
-$title = "Add Bank";
+$title = "Add Merchant";
 $username = $_SESSION['admin_username'];
 $role = "Admin";
 $logout = "admin-actions.php?action=logout";
@@ -56,7 +58,7 @@ include "../components/sidebar.php";
 <div class="page-content">
 
     <div class="page-header">
-        <h2>Add New Bank</h2>
+        <h2>Add New Merchant</h2>
     </div>
 
     <?php if($success): ?>
@@ -70,16 +72,13 @@ include "../components/sidebar.php";
     <div class="form-card">
         <form method="POST">
 
-            <label>Bank ID</label>
-            <input type="text" name="bank_id" required>
+            <label>Business Name</label>
+            <input type="text" name="business_name" required>
 
-            <label>Bank Name</label>
-            <input type="text" name="bank_name" required>
+            <label>Email</label>
+            <input type="email" name="email" required>
 
-            <label>PIN</label>
-            <input type="password" name="pin" required>
-
-            <button type="submit" class="btn-primary submit-btn">Create Bank</button>
+            <button type="submit" class="btn-primary submit-btn">Create Merchant</button>
 
         </form>
     </div>

@@ -1,0 +1,55 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.page-header h2 {
+    color: #a98dff;
+}
+
+.total-box {
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    font-size: 15px;
+    color: #e4e8f0;
+}
+
+.total-box span {
+    color: #73fa79;
+    font-weight: 700;
+}
+
+/* TABLE */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    color: #e4e8f0;
+}
+
+.table-container th {
+    padding: 14px;
+    background: rgba(255,255,255,0.08);
+    color: #a98dff;
+    text-align: left;
+}
+
+.table-container td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Status badge */
+.status-settled {
+    color: #7c5cff;
+    font-weight: 700;
+}

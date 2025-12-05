@@ -1,0 +1,88 @@
+/* --------------------------------------------------------
+   DASHBOARD PAGE SPECIFIC STYLES
+   (Works with common.css)
+--------------------------------------------------------- */
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 25px;
+}
+
+/* Dashboard Stat Cards */
+.stats-grid .card {
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.05);
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+.stats-grid .card h3 {
+    margin: 0 0 8px;
+    color: #a98dff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.stats-grid .card .stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* -------------------------------
+   Recent Transactions Section
+-------------------------------- */
+.table-container {
+    padding: 25px;
+}
+
+.table-container h2 {
+    margin: 0 0 15px;
+    color: #a98dff;
+    font-size: 22px;
+}
+
+/* Main dashboard table */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #e4e8f0;
+}
+
+/* Table Header */
+.table-container th {
+    padding: 14px;
+    text-align: left;
+    background: rgba(255,255,255,0.08);
+    color: #a98dff;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Table Rows */
+.table-container td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: #d1d7e3;
+}
+
+/* Last row */
+.table-container tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover Effect */
+.table-container tbody tr:hover {
+    background: rgba(124,92,255,0.08);
+}

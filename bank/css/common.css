@@ -1,0 +1,155 @@
+/* --------------------------------------------------------
+   COMMON GLOBAL STYLES (Used on ALL admin pages)
+   Dark Gradient + Glass UI + Neutral Purple Accents
+--------------------------------------------------------- */
+
+/* Background */
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0f1f, #151a2e, #0b1225);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: #e4e8f0;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Layout Container */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --------------------------------------------------------
+   SIDEBAR (Shared Across All Admin Pages)
+--------------------------------------------------------- */
+.sidebar {
+    width: 250px;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin: 0 0 20px;
+    color: #a98dff;
+    font-size: 22px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 10px;
+    color: #cdd3e0;
+    text-decoration: none;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    transition: 0.25s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: rgba(124,92,255,0.1);
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------
+   TOPBAR (Shared Everywhere)
+--------------------------------------------------------- */
+.topbar {
+    width: 100%;
+    padding: 15px 25px;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #a98dff;
+}
+
+.topbar .admin-info {
+    font-size: 14px;
+    color: #d2d6e1;
+}
+
+/* Logout Button (Global) */
+.logout-btn {
+    background: #ff4d6d;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.logout-btn:hover {
+    background: #d93452;
+}
+
+/* --------------------------------------------------------
+   PAGE MAIN AREA (Container for each page content)
+--------------------------------------------------------- */
+.page-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    padding: 25px;
+}
+
+/* Shared page header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+    color: #a98dff;
+}
+
+/* Shared global button */
+.btn-primary {
+    background: #7c5cff;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.btn-primary:hover {
+    background: #6b4de8;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    color: #a98dff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    margin-bottom: 15px;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.12);
+}

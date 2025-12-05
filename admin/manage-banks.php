@@ -10,7 +10,8 @@ $conn = mysqli_connect("localhost","root","","payment_system");
 $banks = mysqli_query($conn, "SELECT * FROM banks ORDER BY id DESC");
 ?>
 
-<link rel="stylesheet" href="../components/dashboard-styles.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/banks.css">
 
 <div class="dashboard">
 
@@ -25,7 +26,7 @@ $menu = [
     ["label" => "Users", "link" => "manage-users.php"],
     ["label" => "Merchants", "link" => "manage-merchants.php"],
     ["label" => "Banks", "link" => "manage-banks.php"],
-    ["label" => "Transactions", "link" => "#"]
+    ["label" => "Transactions", "link" => "manage-transactions.php"]
 ];
 
 include "../components/sidebar.php";
@@ -37,10 +38,7 @@ include "../components/sidebar.php";
     <div class="table-container">
         <h2>All Banks</h2>
 
-        <a href="add-bank.php" 
-           style="padding:10px 15px;background:#7c5cff;color:#fff;border-radius:8px;text-decoration:none;">
-           + Add New Bank
-        </a>
+        <a href="add-bank.php" class="add-bank-btn">+ Add New Bank</a>
 
         <br><br>
 
@@ -70,17 +68,15 @@ include "../components/sidebar.php";
                 </td>
 
                 <td>
-                    <a href="edit-bank.php?id=<?php echo $b['id']; ?>" 
-                       style="color:#7c5cff;font-weight:600;">Edit</a> | 
-
-                    <a href="toggle-bank.php?id=<?php echo $b['id']; ?>" 
-                       style="color:#f6c14b;font-weight:600;">
-                       <?php echo $b['active'] ? 'Deactivate' : 'Activate'; ?>
-                    </a> | 
-
-                    <a href="delete-bank.php?id=<?php echo $b['id']; ?>" 
-                       onclick="return confirm('Delete bank? This cannot be undone!');"
-                       style="color:#ff5b5b;font-weight:600;">Delete</a>
+                    <a href="edit-bank.php?id=<?= $b['id']; ?>" class="action-edit">Edit</a>
+                    <a href="toggle-bank.php?id=<?= $b['id']; ?>" class="action-toggle">
+                        <?= $b['active'] ? 'Deactivate' : 'Activate'; ?>
+                    </a>
+                    <a href="delete-bank.php?id=<?= $b['id']; ?>" 
+                    class="action-delete"
+                    onclick="return confirm('Delete bank? This cannot be undone!');">
+                    Delete
+                    </a>
                 </td>
             </tr>
             <?php endwhile; ?>

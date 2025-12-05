@@ -1,0 +1,120 @@
+/* --------------------------------------------------------
+   BANKS PAGE TABLE (Dark Glassmorphism Theme)
+--------------------------------------------------------- */
+
+.table-container {
+    padding: 25px;
+}
+
+.table-container h2 {
+    margin: 0 0 15px;
+    color: #a98dff;
+    font-size: 22px;
+}
+
+/* Add New Bank button */
+.add-bank-btn {
+    display: inline-block;
+    background: #7c5cff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.add-bank-btn:hover {
+    background: #6b4de8;
+}
+
+/* Space below button */
+.table-container .spacer {
+    height: 20px;
+}
+
+/* Main table */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #e4e8f0;
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+/* Header */
+.table-container th {
+    padding: 14px;
+    text-align: left;
+    background: rgba(255,255,255,0.08);
+    color: #a98dff;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Table Rows */
+.table-container td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: #d1d6e1;
+}
+.table-container tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.table-container tbody tr:hover {
+    background: rgba(124,92,255,0.08);
+}
+
+/* --------------------------------------------------------
+   STATUS LABELS
+--------------------------------------------------------- */
+.status-active {
+    color: #73fa79;
+    font-weight: 700;
+}
+.status-inactive {
+    color: #ff6b6b;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------
+   ACTION BUTTONS
+--------------------------------------------------------- */
+
+.table-container td a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: 0.25s;
+    margin-right: 8px;
+}
+
+/* Edit button */
+.action-edit {
+    color: #7c5cff;
+}
+.action-edit:hover {
+    background: rgba(124,92,255,0.15);
+}
+
+/* Activate / Deactivate (yellow) */
+.action-toggle {
+    color: #f6c14b;
+}
+.action-toggle:hover {
+    background: rgba(246,193,75,0.15);
+}
+
+/* Delete button (red) */
+.action-delete {
+    color: #ff5b5b;
+}
+.action-delete:hover {
+    background: rgba(255,91,91,0.18);
+}

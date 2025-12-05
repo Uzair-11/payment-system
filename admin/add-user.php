@@ -7,21 +7,22 @@ if (!isset($_SESSION['admin_logged_in'])) {
 
 $conn = mysqli_connect("localhost","root","","payment_system");
 
+// Handle form submit
 $success = $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-    $bank_id   = mysqli_real_escape_string($conn, $_POST['bank_id']);
-    $bank_name = mysqli_real_escape_string($conn, $_POST['bank_name']);
-    $pin       = mysqli_real_escape_string($conn, $_POST['pin']);
+    $name  = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
     $insert = mysqli_query($conn, "
-        INSERT INTO banks (bank_id, bank_name, pin, active)
-        VALUES ('$bank_id', '$bank_name', '$pin', 1)
+        INSERT INTO users (name, email, phone, password) 
+        VALUES ('$name', '$email', '$phone', '$password')
     ");
 
     if ($insert) {
-        $success = "Bank added successfully!";
+        $success = "User created successfully!";
     } else {
         $error = "Error: " . mysqli_error($conn);
     }
@@ -29,12 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/add-bank.css">
+<link rel="stylesheet" href="css/add-user.css">
 
 <div class="dashboard">
 
 <?php
-$title = "Add Bank";
+$title = "Add User";
 $username = $_SESSION['admin_username'];
 $role = "Admin";
 $logout = "admin-actions.php?action=logout";
@@ -56,7 +57,7 @@ include "../components/sidebar.php";
 <div class="page-content">
 
     <div class="page-header">
-        <h2>Add New Bank</h2>
+        <h2>Add New User</h2>
     </div>
 
     <?php if($success): ?>
@@ -70,16 +71,19 @@ include "../components/sidebar.php";
     <div class="form-card">
         <form method="POST">
 
-            <label>Bank ID</label>
-            <input type="text" name="bank_id" required>
+            <label>Name</label>
+            <input type="text" name="name" required>
 
-            <label>Bank Name</label>
-            <input type="text" name="bank_name" required>
+            <label>Email</label>
+            <input type="email" name="email" required>
 
-            <label>PIN</label>
-            <input type="password" name="pin" required>
+            <label>Phone</label>
+            <input type="text" name="phone" required>
 
-            <button type="submit" class="btn-primary submit-btn">Create Bank</button>
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type="submit" class="btn-primary submit-btn">Create User</button>
 
         </form>
     </div>

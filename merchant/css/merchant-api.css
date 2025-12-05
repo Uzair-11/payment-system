@@ -1,0 +1,83 @@
+.api-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+}
+
+.api-card label {
+    font-weight: 600;
+    color: #a98dff;
+}
+
+.api-row {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0 20px;
+}
+
+.api-row input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.copy-btn {
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: rgba(124,92,255,0.2);
+    border: 1px solid rgba(124,92,255,0.3);
+    color: #d9ccff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background: rgba(124,92,255,0.35);
+}
+
+.regen-btn {
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgba(255,70,70,0.2);
+    border: 1px solid rgba(255,70,70,0.3);
+    color: #ff6b6b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.regen-btn:hover {
+    background: rgba(255,70,70,0.35);
+}
+
+.section-title {
+    margin-top: 18px;
+    color: #a98dff;
+}
+
+.endpoint-box {
+    padding: 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    color: #e4e8f0;
+    word-wrap: break-word;
+}
+
+.code-block {
+    margin-top: 12px;
+    background: rgba(0,0,0,0.3);
+    padding: 14px;
+    border-radius: 10px;
+    color: #73fa79;
+    overflow-x: auto;
+}

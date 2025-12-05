@@ -26,7 +26,8 @@ $tx = mysqli_query($conn, "
 ");
 ?>
 
-<link rel="stylesheet" href="../components/dashboard-styles.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/transactions.css">
 
 <div class="dashboard">
 
@@ -54,13 +55,23 @@ include "../components/sidebar.php";
     <h2>All Transactions</h2>
 
     <!-- FILTER BUTTONS -->
-    <div style="margin-bottom:15px;">
-        <a href="manage-transactions.php?status=all" style="color:white;margin-right:10px;">All</a>
-        <a href="manage-transactions.php?status=pending" style="color:#f6c14b;margin-right:10px;">Pending</a>
-        <a href="manage-transactions.php?status=succeeded" style="color:#73fa79;margin-right:10px;">Succeeded</a>
-        <a href="manage-transactions.php?status=declined" style="color:#ff6b6b;margin-right:10px;">Declined</a>
-        <a href="manage-transactions.php?status=settled" style="color:#7c5cff;">Settled</a>
+    <div class="filter-btns">
+        <a href="manage-transactions.php?status=all" 
+        class="filter-all <?= $status_filter == 'all' ? 'filter-active' : '' ?>">All</a>
+
+        <a href="manage-transactions.php?status=pending"
+        class="filter-pending <?= $status_filter == 'pending' ? 'filter-active' : '' ?>">Pending</a>
+
+        <a href="manage-transactions.php?status=succeeded"
+        class="filter-succeeded <?= $status_filter == 'succeeded' ? 'filter-active' : '' ?>">Succeeded</a>
+
+        <a href="manage-transactions.php?status=declined"
+        class="filter-declined <?= $status_filter == 'declined' ? 'filter-active' : '' ?>">Declined</a>
+
+        <a href="manage-transactions.php?status=settled"
+        class="filter-settled <?= $status_filter == 'settled' ? 'filter-active' : '' ?>">Settled</a>
     </div>
+
 
     <table>
         <tr>
@@ -89,24 +100,21 @@ include "../components/sidebar.php";
                     "settled"=>"#7c5cff"
                 ];
                 ?>
-                <span style="color:<?php echo $colors[$t['status']]; ?>;font-weight:700;">
+                <span class="status-<?php echo $t['status']; ?>">
                     <?php echo ucfirst($t['status']); ?>
                 </span>
+
             </td>
 
             <td><?php echo $t['created_at']; ?></td>
 
             <td>
-                <a href="view-transaction.php?tx=<?php echo $t['tx_id']; ?>" 
-                   style="color:#7c5cff;font-weight:600;">View</a>
+            <a href="view-transaction.php?tx=<?= $t['tx_id']; ?>" class="action-view">View</a>
 
-                <?php if($t['status'] == "pending"): ?>
-                  | <a href="update-transaction.php?tx=<?php echo $t['tx_id']; ?>&action=approve" 
-                       style="color:#73fa79;font-weight:600;">Approve</a>
-                  | <a href="update-transaction.php?tx=<?php echo $t['tx_id']; ?>&action=decline" 
-                       style="color:#ff6b6b;font-weight:600;">Decline</a>
-                <?php endif; ?>
-
+            <?php if($t['status'] == "pending"): ?>
+                | <a href="update-transaction.php?tx=<?= $t['tx_id']; ?>&action=approve" class="action-approve">Approve</a>
+                | <a href="update-transaction.php?tx=<?= $t['tx_id']; ?>&action=decline" class="action-decline">Decline</a>
+            <?php endif; ?>
             </td>
         </tr>
         <?php endwhile; ?>

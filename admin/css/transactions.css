@@ -1,0 +1,128 @@
+/* --------------------------------------------------------
+   TRANSACTIONS PAGE (Dark Glassmorphism Theme)
+--------------------------------------------------------- */
+
+.table-container {
+    padding: 25px;
+}
+
+.table-container h2 {
+    margin: 0 0 20px;
+    color: #a98dff;
+    font-size: 22px;
+}
+
+/* --------------------------------------------------------
+   FILTER BUTTONS
+--------------------------------------------------------- */
+.filter-btns {
+    margin-bottom: 20px;
+}
+
+.filter-btns a {
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-right: 10px;
+    transition: 0.25s;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Specific filter colors */
+.filter-all { color: #ffffff; }
+.filter-pending { color: #f6c14b; }
+.filter-succeeded { color: #73fa79; }
+.filter-declined { color: #ff6b6b; }
+.filter-settled { color: #7c5cff; }
+
+.filter-btns a:hover {
+    background: rgba(124,92,255,0.15);
+}
+
+/* Highlight selected filter */
+.filter-active {
+    background: rgba(124,92,255,0.28) !important;
+    color: white !important;
+}
+
+/* --------------------------------------------------------
+   TABLE
+--------------------------------------------------------- */
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #e4e8f0;
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+/* Header */
+.table-container th {
+    padding: 14px;
+    text-align: left;
+    background: rgba(255,255,255,0.08);
+    color: #a98dff;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Rows */
+.table-container td {
+    padding: 14px;
+    color: #d1d6e1;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Hover */
+.table-container tbody tr:hover {
+    background: rgba(124,92,255,0.08);
+}
+
+.table-container tr:last-child td {
+    border-bottom: none;
+}
+
+/* --------------------------------------------------------
+   STATUS COLORS
+--------------------------------------------------------- */
+
+.status-pending  { color: #f6c14b; font-weight: 700; }
+.status-succeeded { color: #73fa79; font-weight: 700; }
+.status-declined  { color: #ff6b6b; font-weight: 700; }
+.status-settled { color: #7c5cff; font-weight: 700; }
+
+/* --------------------------------------------------------
+   ACTION BUTTONS
+--------------------------------------------------------- */
+
+.action-view {
+    color: #7c5cff;
+    font-weight: 600;
+}
+.action-view:hover {
+    text-decoration: underline;
+}
+
+.action-approve {
+    color: #73fa79;
+    font-weight: 600;
+}
+.action-approve:hover {
+    text-decoration: underline;
+}
+
+.action-decline {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+.action-decline:hover {
+    text-decoration: underline;
+}

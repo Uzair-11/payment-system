@@ -1,0 +1,124 @@
+/* --------------------------------------------------------
+   MERCHANTS PAGE TABLE (Glassmorphism Style)
+--------------------------------------------------------- */
+
+.table-container {
+    padding: 25px;
+}
+
+.table-container h2 {
+    margin: 0 0 15px;
+    color: #a98dff;
+    font-size: 22px;
+}
+
+/* Main merchants table */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #e4e8f0;
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+/* Table Header */
+.table-container th {
+    padding: 14px;
+    text-align: left;
+    background: rgba(255,255,255,0.08);
+    color: #a98dff;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Rows */
+.table-container td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: #d1d6e1;
+}
+
+.table-container tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover */
+.table-container tbody tr:hover {
+    background: rgba(124,92,255,0.08);
+}
+
+/* ------------------------------
+   Action Buttons (Edit/Delete/Verify/Suspend)
+-------------------------------- */
+
+.table-container td a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin-right: 8px;
+    transition: 0.25s;
+}
+
+/* Edit button */
+.table-container td a:nth-child(1) {
+    color: #7c5cff;
+}
+.table-container td a:nth-child(1):hover {
+    background: rgba(124,92,255,0.18);
+}
+
+/* Delete button */
+.table-container td a:nth-child(2) {
+    color: #ff4d6d;
+}
+.table-container td a:nth-child(2):hover {
+    background: rgba(255,77,109,0.18);
+}
+
+/* Verify (green) */
+.table-container td a.verify {
+    color: #73fa79;
+}
+.table-container td a.verify:hover {
+    background: rgba(115,250,121,0.18);
+}
+
+/* Suspend (red) */
+.table-container td a.suspend {
+    color: #ff4d6d;
+}
+.table-container td a.suspend:hover {
+    background: rgba(255,77,109,0.18);
+}
+
+/* Verified status */
+.status-verified {
+    color: #73fa79;
+    font-weight: 700;
+}
+.status-pending {
+    color: #f6c14b;
+    font-weight: 700;
+}
+
+/* Add Merchant button */
+.add-btn {
+    display: inline-block;
+    background: #7c5cff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 15px;
+    transition: 0.25s;
+}
+
+.add-btn:hover {
+    background: #6b4de8;
+}

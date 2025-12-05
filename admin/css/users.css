@@ -1,0 +1,96 @@
+/* --------------------------------------------------------
+   USERS PAGE TABLE STYLES (Matches Dark Glass Dashboard)
+--------------------------------------------------------- */
+
+/* Wrapper */
+.table-wrapper {
+    padding: 20px;
+}
+
+/* Main table */
+.premium-table {
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #e4e8f0;
+    box-shadow: 0 0 20px rgba(124,92,255,0.15);
+}
+
+/* Header */
+.premium-table thead {
+    background: rgba(255,255,255,0.08);
+}
+
+.premium-table th {
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+    color: #a98dff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Rows */
+.premium-table td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: #d1d6e1;
+}
+
+.premium-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.premium-table tbody tr:hover {
+    background: rgba(124,92,255,0.08);
+}
+
+/* ------------------------------
+   Actions Column (Edit / Delete)
+-------------------------------- */
+.actions a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin-right: 12px;
+    transition: 0.25s;
+}
+
+/* Edit button */
+.action-edit {
+    color: #7c5cff;
+}
+.action-edit:hover {
+    background: rgba(124,92,255,0.15);
+}
+
+/* Delete button */
+.action-delete {
+    color: #ff4d6d;
+}
+.action-delete:hover {
+    background: rgba(255,77,109,0.15);
+}
+
+/* Page header (title + add button) */
+.page-header h2 {
+    color: #a98dff;
+}
+
+.page-header .btn-primary {
+    background: #7c5cff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.page-header .btn-primary:hover {
+    background: #6b4de8;
+}

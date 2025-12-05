@@ -1,0 +1,56 @@
+.settings-card {
+    max-width: 550px;
+    margin: 0 auto 30px;
+    padding: 25px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+}
+
+.settings-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.settings-card label {
+    color: #a98dff;
+    font-weight: 600;
+}
+
+.settings-card input {
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+}
+
+.settings-card input:focus {
+    border-color: #7c5cff;
+    background: rgba(255,255,255,0.12);
+    outline: none;
+}
+
+.save-btn {
+    margin-top: 10px;
+    padding: 12px;
+    background: rgba(124,92,255,0.2);
+    border: 1px solid rgba(124,92,255,0.4);
+    border-radius: 10px;
+    color: #d9ccff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.save-btn:hover {
+    background: rgba(124,92,255,0.35);
+}
+
+.section-title {
+    color: #a98dff;
+    margin-bottom: 14px;
+    text-align: center;
+}

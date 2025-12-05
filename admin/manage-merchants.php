@@ -11,7 +11,8 @@ $conn = mysqli_connect("localhost","root","","payment_system");
 $merchants = mysqli_query($conn, "SELECT * FROM merchants ORDER BY id DESC");
 ?>
 
-<link rel="stylesheet" href="../components/dashboard-styles.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/merchants.css">
 
 <div class="dashboard">
 
@@ -25,8 +26,8 @@ $menu = [
     ["label" => "Dashboard", "link" => "admin-dashboard.php"],
     ["label" => "Users", "link" => "manage-users.php"],
     ["label" => "Merchants", "link" => "manage-merchants.php"],
-    ["label" => "Banks", "link" => "#"],
-    ["label" => "Transactions", "link" => "#"],
+    ["label" => "Banks", "link" => "manage-banks.php"],
+    ["label" => "Transactions", "link" => "manage-transactions.php"],
 ];
 
 include "../components/sidebar.php";
@@ -37,6 +38,8 @@ include "../components/sidebar.php";
 
     <div class="table-container">
         <h2>All Merchants</h2>
+        <a href="add-merchant.php" class="add-btn">+ Add Merchant</a>
+        <br><br>
 
         <table>
             <tr>
@@ -64,23 +67,13 @@ include "../components/sidebar.php";
                 </td>
 
                 <td>
-                    <a href="edit-merchant.php?id=<?php echo $m['id']; ?>" 
-                       style="color:#7c5cff;font-weight:600;">Edit</a> |
-
-                    <a href="delete-merchant.php?id=<?php echo $m['id']; ?>" 
-                       style="color:#ff5b5b;font-weight:600;"
-                       onclick="return confirm('Delete merchant?');">
-                       Delete
-                    </a> |
+                    <a href="edit-merchant.php?id=<?php echo $m['id']; ?>" class="action-edit">Edit</a>
+                    <a href="delete-merchant.php?id=<?php echo $m['id']; ?>" class="action-delete">Delete</a>
 
                     <?php if(!$m['verified']): ?>
-                        <a href="verify-merchant.php?id=<?php echo $m['id']; ?>" 
-                           style="color:#73fa79;font-weight:600;">Verify</a>
+                        <a href="verify-merchant.php?id=<?php echo $m['id']; ?>" class="verify">Verify</a>
                     <?php else: ?>
-                        <a href="toggle-merchant.php?id=<?php echo $m['id']; ?>" 
-                           style="color:#ff5b5b;font-weight:600;">
-                           Suspend
-                        </a>
+                        <a href="toggle-merchant.php?id=<?php echo $m['id']; ?>" class="suspend">Suspend</a>
                     <?php endif; ?>
                 </td>
             </tr>
